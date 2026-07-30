@@ -1,0 +1,11 @@
+IdEtudiant,Nom,Prenom,Sexe,DateNaissance,Ville,Email
+1,Akakpo,Yao,M,1995-08-15,Montréal,yao@gmail.com
+2,Tremblay,Sophie,F,1998-05-20,Laval,sophie@gmail.com
+3,Gagnon,Marc,M,1997-11-10,Québec,marc@gmail.com
+4,Roy,Julie,F,1996-02-12,Gatineau,julie@gmail.com
+5,Bouchard,Alex,M,1999-09-30,Sherbrooke,alex@gmail.com
+6,Côté,Nadia,F,1998-12-25,Montréal,nadia@gmail.com
+7,Lefebvre,Martin,M,1995-01-11,Laval,martin@gmail.com
+8,Fortin,Éric,M,1994-07-09,Québec,eric@gmail.com
+9,Simard,Camille,F,1997-03-17,Longueuil,camille@gmail.com
+10,Parent,Luc,M,1996-10-28,Trois-Rivières,luc@gmail.com

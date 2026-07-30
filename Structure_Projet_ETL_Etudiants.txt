@@ -1,0 +1,21 @@
+Projet_ETL_Etudiants/
+
+│
+├── data/
+│   ├── Etudiants.csv
+│   ├── Notes.csv
+│   ├── Presence.csv
+│
+├── src/
+│   ├── extract.py
+│   ├── transform.py
+│   ├── analyse.py
+│   ├── load.py
+│   ├── graphique.py
+│   └── main.py
+│
+├── rapports/
+│
+├── requirements.txt
+│
+└── README.md
