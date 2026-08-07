@@ -1,4 +1,6 @@
-INSERT INTO Clients
+USE GestionVentes;
+
+INSERT INTO Client
 (ClientID, Nom, Ville, DateCreation)
 
 VALUES
@@ -6,9 +8,13 @@ VALUES
 (2, 'Marie Martin', 'Quebec', '2025-02-15');
 
 
-INSERT INTO Ventes
+INSERT INTO Vente
 (VenteID, ClientID, DateVente, Montant)
 
 VALUES
 (100,1,'2025-03-01',250.50),
 (101,2,'2025-03-05',430.00);
+
+SELECT * FROM Client;
+
+SELECT * FROM Vente;
