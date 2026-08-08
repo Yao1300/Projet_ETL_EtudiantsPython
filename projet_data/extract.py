@@ -1,21 +1,21 @@
+```python
 # ============================================================
 # Fichier : extract.py
 # Projet : Analyse ETL des performances des étudiants
 #
 # Rôle :
-#   Cette partie réalise l'étape E (Extract) du pipeline ETL.
+# Cette partie réalise l'étape E (Extract) du pipeline ETL.
 #
-#   Elle permet :
-#       - de lire les fichiers CSV
-#       - de contrôler l'existence des fichiers
-#       - de gérer les erreurs de lecture
-#       - de retourner des DataFrames pandas
+# Elle permet :
+# - de lire les fichiers CSV
+# - de contrôler l'existence des fichiers
+# - de gérer les erreurs de lecture
+# - de retourner des DataFrames pandas
 #
 # Bibliothèques utilisées :
-#       pandas : manipulation des données
-#       os     : gestion des chemins fichiers
-#       logging: suivi des opérations
-#
+# pandas  : manipulation des données
+# os      : gestion des chemins fichiers
+# logging : suivi des opérations
 # ============================================================
 
 
@@ -24,19 +24,14 @@ import os
 import logging
 
 
-
 # ============================================================
 # Configuration du système de journalisation
 # ============================================================
 
 logging.basicConfig(
-
     level=logging.INFO,
-
     format="%(asctime)s - %(levelname)s - %(message)s"
-
 )
-
 
 
 # ============================================================
@@ -44,7 +39,6 @@ logging.basicConfig(
 # ============================================================
 
 def lire_csv(chemin_fichier):
-
     """
     Cette fonction lit un fichier CSV et retourne
     un DataFrame pandas.
@@ -56,7 +50,6 @@ def lire_csv(chemin_fichier):
         DataFrame pandas
     """
 
-
     try:
 
         # ----------------------------------------------------
@@ -64,72 +57,53 @@ def lire_csv(chemin_fichier):
         # ----------------------------------------------------
 
         if not os.path.exists(chemin_fichier):
-
             raise FileNotFoundError(
-
                 f"Le fichier {chemin_fichier} n'existe pas"
-
             )
-
-
 
         # ----------------------------------------------------
         # Lecture du fichier CSV avec pandas
         # ----------------------------------------------------
 
         df = pd.read_csv(
-
             chemin_fichier,
-
             encoding="utf-8"
-
         )
 
-
+        # ----------------------------------------------------
+        # Journalisation de l'extraction
+        # ----------------------------------------------------
 
         logging.info(
-
             f"Extraction réussie : {chemin_fichier}"
-
         )
-
 
         logging.info(
-
             f"Nombre de lignes extraites : {len(df)}"
-
         )
-
-
 
         return df
 
-
+    # --------------------------------------------------------
+    # Gestion du fichier introuvable
+    # --------------------------------------------------------
 
     except FileNotFoundError as erreur:
 
-
         logging.error(erreur)
-
-
         raise
 
-
+    # --------------------------------------------------------
+    # Gestion des autres erreurs
+    # --------------------------------------------------------
 
     except Exception as erreur:
 
-
         logging.error(
-
             f"Erreur pendant la lecture du fichier : {erreur}"
-
         )
 
-
         raise
-
-
-
 
 
 # ============================================================
@@ -137,23 +111,13 @@ def lire_csv(chemin_fichier):
 # ============================================================
 
 def extraire_etudiants():
-
     """
-    Charge le fichier Etudiants.csv
+    Charge le fichier Etudiants.csv.
     """
 
-
-    chemin = (
-
-        "../data/Etudiants.csv"
-
-    )
-
+    chemin = "../data/Etudiants.csv"
 
     return lire_csv(chemin)
-
-
-
 
 
 # ============================================================
@@ -161,23 +125,13 @@ def extraire_etudiants():
 # ============================================================
 
 def extraire_notes():
-
     """
-    Charge le fichier Notes.csv
+    Charge le fichier Notes.csv.
     """
 
-
-    chemin = (
-
-        "../data/Notes.csv"
-
-    )
-
+    chemin = "../data/Notes.csv"
 
     return lire_csv(chemin)
-
-
-
 
 
 # ============================================================
@@ -185,23 +139,13 @@ def extraire_notes():
 # ============================================================
 
 def extraire_presence():
-
     """
-    Charge le fichier Presence.csv
+    Charge le fichier Presence.csv.
     """
 
-
-    chemin = (
-
-        "../data/Presence.csv"
-
-    )
-
+    chemin = "../data/Presence.csv"
 
     return lire_csv(chemin)
-
-
-
 
 
 # ============================================================
@@ -210,34 +154,26 @@ def extraire_presence():
 
 if __name__ == "__main__":
 
-
     print("\n===== TEST EXTRACTION =====\n")
 
-
+    # --------------------------------------------------------
+    # Extraction des données
+    # --------------------------------------------------------
 
     etudiants = extraire_etudiants()
-
-
     notes = extraire_notes()
-
-
     presence = extraire_presence()
 
-
+    # --------------------------------------------------------
+    # Affichage des résultats
+    # --------------------------------------------------------
 
     print("\n--- Etudiants ---")
-
     print(etudiants.head())
 
-
-
     print("\n--- Notes ---")
-
     print(notes.head())
 
-
-
     print("\n--- Présence ---")
-
     print(presence.head())
-
+```
