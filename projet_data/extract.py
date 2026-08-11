@@ -1,4 +1,3 @@
-```python
 # ============================================================
 # Fichier : extract.py
 # Projet : Analyse ETL des performances des étudiants
@@ -27,13 +26,11 @@ import logging
 # ============================================================
 # Configuration du système de journalisation
 # ============================================================
-
+ 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.INFO,  
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
-
-
 # ============================================================
 # Fonction générique de lecture CSV
 # ============================================================
@@ -115,7 +112,7 @@ def extraire_etudiants():
     Charge le fichier Etudiants.csv.
     """
 
-    chemin = "../data/Etudiants.csv"
+    chemin = "D:/Git/Projet_ETL_EtudiantsPython/data/Etudiants.csv"
 
     return lire_csv(chemin)
 
@@ -129,7 +126,7 @@ def extraire_notes():
     Charge le fichier Notes.csv.
     """
 
-    chemin = "../data/Notes.csv"
+    chemin = "D:/Git/Projet_ETL_EtudiantsPython/data/Notes.csv"
 
     return lire_csv(chemin)
 
@@ -143,7 +140,7 @@ def extraire_presence():
     Charge le fichier Presence.csv.
     """
 
-    chemin = "../data/Presence.csv"
+    chemin = "D:/Git/Projet_ETL_EtudiantsPython/data/Presence.csv"
 
     return lire_csv(chemin)
 
@@ -161,6 +158,8 @@ if __name__ == "__main__":
     # --------------------------------------------------------
 
     etudiants = extraire_etudiants()
+   # print("\n===== COLONNES DU FICHIER ÉTUDIANTS =====")
+    #print(etudiants.columns.tolist())
     notes = extraire_notes()
     presence = extraire_presence()
 
@@ -176,4 +175,3 @@ if __name__ == "__main__":
 
     print("\n--- Présence ---")
     print(presence.head())
-```

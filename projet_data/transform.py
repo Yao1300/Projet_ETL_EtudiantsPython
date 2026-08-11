@@ -1,34 +1,53 @@
+# ============================================================
+# Fichier : transform.py
+# Projet : Analyse ETL des performances des étudiants
+#
+# Rôle :
+# Nettoyage et transformation des données extraites.
+# ============================================================
+
 import pandas as pd
 import numpy as np
 
 
+# ============================================================
+# Nettoyage des données
+# ============================================================
+
 def clean_data(df):
     """
-    Nettoyage des données
+    Nettoie les données.
+
+    - Suppression des doublons
+    - Gestion des valeurs manquantes
     """
+
+    # --------------------------------------------------------
     # Suppression des doublons
+    # --------------------------------------------------------
+
     df = df.drop_duplicates()
 
+    # --------------------------------------------------------
     # Gestion des valeurs manquantes
+    # --------------------------------------------------------
+
     df = df.fillna(0)
 
     return df
 
 
+# ============================================================
+# Transformation des données
+# ============================================================
+
 def transform_data(df):
     """
-    Transformation des données
+    Transforme les données.
     """
 
-    # Conversion d'une colonne en majuscule
-    df["nom"] = df["nom"].str.upper()
-
-    # Création d'une nouvelle variable
-    df["total"] = df["prix"] * df["quantite"]
-
-    # Normalisation d'une colonne numérique
-    df["score"] = (
-        df["score"] - df["score"].mean()
-    ) / df["score"].std()
+    # Affichage des colonnes disponibles
+    print("\n===== COLONNES DISPONIBLES =====")
+    print(df.columns.tolist())
 
     return df
