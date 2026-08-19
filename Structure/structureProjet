@@ -1,0 +1,11 @@
+Pipeline_ETL_BI/
+│
+├── data/
+│   └── ventes.csv
+│
+├── extract.py
+├── transform.py
+├── load.py
+├── analyse.py
+├── main.py
+└── requirements.txt

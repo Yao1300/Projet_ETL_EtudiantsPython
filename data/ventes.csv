@@ -1,0 +1,11 @@
+date,client,ville,produit,categorie,quantite,prix_unitaire
+2026-01-05,Client A,Montreal,Ordinateur,Informatique,2,850
+2026-01-08,Client B,Laval,Souris,Accessoires,5,35
+2026-01-12,Client C,Montreal,Clavier,Accessoires,3,75
+2026-01-15,Client D,Longueuil,Ordinateur,Informatique,1,950
+2026-01-20,Client E,Montreal,Ecran,Informatique,2,320
+2026-02-03,Client A,Montreal,Clavier,Accessoires,4,70
+2026-02-10,Client F,Laval,Ordinateur,Informatique,1,900
+2026-02-18,Client C,Montreal,Souris,Accessoires,6,30
+2026-02-22,Client B,Laval,Ecran,Informatique,2,300
+2026-03-05,Client D,Longueuil,Ordinateur,Informatique,2,880
